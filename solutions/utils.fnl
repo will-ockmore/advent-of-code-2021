@@ -9,7 +9,7 @@
                out)))
 
 (fn get-contents [filepath] 
-  (with-open [f (io.open filepath)]
-             (f:read :*a)))
+  (icollect [line _ (with-open [f (io.open filepath)]
+                        (string.gmatch (f:read :*a) "(.-)\n"))] line))
 {: request
  : get-contents}
