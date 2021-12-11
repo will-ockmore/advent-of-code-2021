@@ -22,4 +22,12 @@
     (and result v)))
 
 
-{: request : get-contents : any : all}
+(fn range [start stop step]
+  (var nums [])
+  (for [i start stop (or step 1)]
+    (table.insert nums i))
+  nums)
+
+
+
+{: request : get-contents : any : all : range}
