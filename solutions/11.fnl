@@ -70,10 +70,19 @@
     (set total-flashes (+ total-flashes (step octopuses))))
   total-flashes)
 
+
+(fn find-all-octopus-flash [octopuses n]
+  (var every-octopus-flashed nil)
+  (for [step-num 1 math.huge :until every-octopus-flashed]
+    (step octopuses)
+    (when (utils.all (icollect [_ row (ipairs octopuses)] (utils.all (icollect [_ octopus (ipairs row)] (= octopus 0)))))
+      (set every-octopus-flashed step-num)))
+  every-octopus-flashed)
+
 (fn part-1 []
   (-> (read-input) (run-steps 100)))
 
 (fn part-2 []
-  (print :hi))
+  (-> (read-input) (find-all-octopus-flash)))
 
 {: part-1 : part-2}
