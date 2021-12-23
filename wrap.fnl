@@ -13,6 +13,8 @@
 (local eleven (require "solutions.11"))
 (local twelve (require "solutions.12"))
 (local thirteen (require "solutions.13"))
+(local fourteen (require "solutions.14"))
+(local fifteen (require "solutions.15"))
 
 (print (.. "First day part one: " (one.part-1) ))
 (print (.. "First day part two: " (one.part-2) ))
@@ -53,3 +55,9 @@
 (print (.. "Thirteenth day part one: " (thirteen.part-1) ))
 (print  "Thirteenth day part two: ")
 (thirteen.part-2)
+
+(print (.. "Fourteenth day part one: " (fourteen.part-1) ))
+(print (.. "Fourteenth day part two: " (fourteen.part-2) ))
+
+(print (.. "Fifteenth day part one: " (fifteen.part-1) ))
+(print (.. "Fifteenth day part two: " (fifteen.part-2) ))
