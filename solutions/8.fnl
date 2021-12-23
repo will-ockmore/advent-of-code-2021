@@ -46,8 +46,8 @@
 
 (fn read-input []
   (icollect [line (io.lines :./solutions/inputs/8.txt)]
-            (when (not (= line ""))
-              (let [[p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 & output] (icollect [signal-pattern _ (string.gmatch line
+    (when (not (= line ""))
+      (let [[p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 & output] (icollect [signal-pattern _ (string.gmatch line
                                                                                                  "(%a+)")]
                                                         signal-pattern)]
         {:patterns [p1 p2 p3 p4 p5 p6 p7 p8 p9 p10] : output}))))
